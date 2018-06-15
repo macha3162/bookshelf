@@ -43,6 +43,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 gem 'haml-rails', '~> 1.0'
 
+gem 'friendly_id', '~> 5.1.0'
+
 gem 'therubyracer'
 gem 'less-rails'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'

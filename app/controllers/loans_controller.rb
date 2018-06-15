@@ -1,39 +1,24 @@
 class LoansController < ApplicationController
+  before_action :set_book
   before_action :set_loan, only: [:show, :edit, :update, :destroy]
 
-  # GET /loans
-  # GET /loans.json
-  def index
-    @loans = Loan.all
-  end
 
-  # GET /loans/1
-  # GET /loans/1.json
   def show
   end
 
-  # GET /loans/new
   def new
-    @loan = Loan.new
+    @loan = @book.loans.new
   end
 
-  # GET /loans/1/edit
   def edit
   end
 
-  # POST /loans
-  # POST /loans.json
   def create
-    @loan = Loan.new(loan_params)
-
-    respond_to do |format|
-      if @loan.save
-        format.html { redirect_to @loan, notice: 'Loan was successfully created.' }
-        format.json { render :show, status: :created, location: @loan }
-      else
-        format.html { render :new }
-        format.json { render json: @loan.errors, status: :unprocessable_entity }
-      end
+    @loan = @book.loans.new(loan_params)
+    if @loan.save
+      redirect_to @book, notice: 'Loan was successfully created.'
+    else
+      render :new
     end
   end
 
@@ -62,13 +47,16 @@ class LoansController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_loan
-      @loan = Loan.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def loan_params
-      params.require(:loan).permit(:user_id, :book_id, :checkouted_at, :returned_at, :due_date)
-    end
+  def set_book
+    @book = Book.friendly.find(params[:book_id])
+  end
+
+  def set_loan
+    @loan = @book.loans.find(params[:id])
+  end
+
+  def loan_params
+    params.require(:loan).permit(:user_id, :book_id, :checkouted_at, :returned_at, :due_date)
+  end
 end

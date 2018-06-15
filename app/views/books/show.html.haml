@@ -1,0 +1,33 @@
+- model_class = Book
+.page-header
+  %h1=t '.title', :default => model_class.model_name.human.titleize
+
+%p
+  %strong= model_class.human_attribute_name(:title) + ':'
+  %br
+  = @book.title
+%p
+  %strong= model_class.human_attribute_name(:isbn) + ':'
+  %br
+  = @book.isbn
+%p
+  %strong= model_class.human_attribute_name(:auther_id) + ':'
+  %br
+  = @book.auther_id
+%p
+  %strong= model_class.human_attribute_name(:image_path) + ':'
+  %br
+  = @book.image_path
+%p
+  %strong= model_class.human_attribute_name(:page) + ':'
+  %br
+  = @book.page
+%p
+  %strong= model_class.human_attribute_name(:summary) + ':'
+  %br
+  = @book.summary
+
+
+= link_to t('.back', :default => t("helpers.links.back")), books_path, :class => 'btn btn-default'
+= link_to t('.edit', :default => t("helpers.links.edit")), edit_book_path(@book), :class => 'btn btn-default'
+= link_to t('.destroy', :default => t("helpers.links.destroy")), book_path(@book), :method => "delete", :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) }, :class => 'btn btn-danger'

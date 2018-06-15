@@ -22,6 +22,7 @@ vendor/bundle
 /public/assets
 .byebug_history
 .idea
+**/*.sqlite3
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key

@@ -11,13 +11,25 @@
   %br
   = @book.isbn
 %p
-  %strong= model_class.human_attribute_name(:auther_id) + ':'
+  %strong= model_class.human_attribute_name(:manufacturer) + ':'
   %br
-  = @book.auther_id
+  = @book.manufacturer
 %p
-  %strong= model_class.human_attribute_name(:image_path) + ':'
+  %strong= model_class.human_attribute_name(:image_url) + ':'
   %br
-  = @book.image_path
+  = @book.image_url
+%p
+  %strong= model_class.human_attribute_name(:book_url) + ':'
+  %br
+  = @book.book_url
+%p
+  %strong= model_class.human_attribute_name(:author_id) + ':'
+  %br
+  = @book.author_id
+%p
+  %strong= model_class.human_attribute_name(:user_id) + ':'
+  %br
+  = @book.user_id
 %p
   %strong= model_class.human_attribute_name(:page) + ':'
   %br

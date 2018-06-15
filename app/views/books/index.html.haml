@@ -7,8 +7,11 @@
       %th= model_class.human_attribute_name(:id)
       %th= model_class.human_attribute_name(:title)
       %th= model_class.human_attribute_name(:isbn)
-      %th= model_class.human_attribute_name(:auther_id)
-      %th= model_class.human_attribute_name(:image_path)
+      %th= model_class.human_attribute_name(:manufacturer)
+      %th= model_class.human_attribute_name(:image_url)
+      %th= model_class.human_attribute_name(:book_url)
+      %th= model_class.human_attribute_name(:author_id)
+      %th= model_class.human_attribute_name(:user_id)
       %th= model_class.human_attribute_name(:page)
       %th= model_class.human_attribute_name(:summary)
       %th= model_class.human_attribute_name(:created_at)
@@ -19,8 +22,11 @@
         %td= link_to book.id, book_path(book)
         %td= book.title
         %td= book.isbn
-        %td= book.auther_id
-        %td= book.image_path
+        %td= book.manufacturer
+        %td= book.image_url
+        %td= book.book_url
+        %td= book.author_id
+        %td= book.user_id
         %td= book.page
         %td= book.summary
         %td=l book.created_at

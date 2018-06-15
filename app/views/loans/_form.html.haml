@@ -1,0 +1,30 @@
+= form_for @loan, html: { class: "form form-horizontal loan" } do |f|
+  .form-group
+    = f.label :user_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :user_id, class: 'form-control', required: true
+    = f.error_span(:user_id)
+  .form-group
+    = f.label :book_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :book_id, class: 'form-control', required: true
+    = f.error_span(:book_id)
+  .form-group
+    = f.label :checkouted_at, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :checkouted_at, class: 'form-control', required: true
+    = f.error_span(:checkouted_at)
+  .form-group
+    = f.label :returned_at, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :returned_at, class: 'form-control', required: true
+    = f.error_span(:returned_at)
+  .form-group
+    = f.label :due_date, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :due_date, class: 'form-control', required: true
+    = f.error_span(:due_date)
+  .form-group
+    .col-lg-offset-2.col-lg-10
+      = f.submit nil,class: 'btn btn-primary'
+      = link_to t('.cancel', :default => t("helpers.links.cancel")), loans_path, :class => 'btn btn-default'

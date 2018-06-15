@@ -7,27 +7,42 @@
   .form-group
     = f.label :isbn, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :isbn, class: 'form-control', required: true
+      = f.text_field :isbn, class: 'form-control'
     = f.error_span(:isbn)
   .form-group
-    = f.label :auther_id, class: 'control-label col-lg-2'
+    = f.label :manufacturer, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :auther_id, class: 'form-control', required: true
-    = f.error_span(:auther_id)
+      = f.text_field :manufacturer, class: 'form-control'
+    = f.error_span(:manufacturer)
   .form-group
-    = f.label :image_path, class: 'control-label col-lg-2'
+    = f.label :image_url, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :image_path, class: 'form-control', required: true
-    = f.error_span(:image_path)
+      = f.text_field :image_url, class: 'form-control'
+    = f.error_span(:image_url)
+  .form-group
+    = f.label :book_url, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :book_url, class: 'form-control'
+    = f.error_span(:book_url)
+  .form-group
+    = f.label :author_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :author_id, class: 'form-control'
+    = f.error_span(:author_id)
+  .form-group
+    = f.label :user_id, class: 'control-label col-lg-2'
+    .col-lg-10
+      = f.text_field :user_id, class: 'form-control'
+    = f.error_span(:user_id)
   .form-group
     = f.label :page, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :page, class: 'form-control', required: true
+      = f.text_field :page, class: 'form-control'
     = f.error_span(:page)
   .form-group
     = f.label :summary, class: 'control-label col-lg-2'
     .col-lg-10
-      = f.text_field :summary, class: 'form-control', required: true
+      = f.text_field :summary, class: 'form-control'
     = f.error_span(:summary)
   .form-group
     .col-lg-offset-2.col-lg-10

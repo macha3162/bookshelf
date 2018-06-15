@@ -10,15 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_06_15_105451) do
+ActiveRecord::Schema.define(version: 2018_06_15_113559) do
 
   create_table "books", force: :cascade do |t|
     t.string "title"
     t.string "isbn"
-    t.string "auther_id"
-    t.string "image_path"
-    t.integer "page"
+    t.string "manufacturer"
+    t.string "image_url"
+    t.string "book_url"
+    t.integer "author_id"
+    t.integer "user_id"
+    t.integer "page", default: 0
     t.text "summary"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "loans", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "book_id"
+    t.date "checkouted_at"
+    t.date "returned_at"
+    t.date "due_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
